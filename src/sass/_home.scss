@@ -1,0 +1,32 @@
+.homeContainer {
+    padding: 10px 15%;
+    position: relative;
+
+    .botonFilterContainer {
+        margin: 10px 0;
+        display: flex;
+        /* justify-content: start; */
+        align-items: center;
+
+        svg {
+            width: 30px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .loadMoreContainer {
+        margin: 50px 0;
+        overflow: hidden;
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: .9rem;
+            color: $secondColor;
+            background-color: $mainColor;
+            cursor: pointer;
+        }
+    }
+}

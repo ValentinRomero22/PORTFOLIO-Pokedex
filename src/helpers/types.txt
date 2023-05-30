@@ -1,0 +1,20 @@
+grass
+normal
+fighting
+flying: false,
+poison: false,
+ground
+rock
+bug
+ghost
+steel
+fire: false,
+water
+electric
+psychic
+ice
+dragon
+dark
+fairy
+unknow
+shadow

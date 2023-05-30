@@ -1,0 +1,110 @@
+.pokemonCard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .pokemonImageContainer {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 200px;
+            filter: drop-shadow(0 0 5px $thirdColor);
+        }
+    }
+
+    .pokemonName {
+        margin: 15px 0;
+        font-weight: 600;
+    }
+
+    .pokemonTypeContainer {
+        margin: 0 20%;
+        display: flex;
+        justify-content: space-evenly;
+
+        .pokemonType {
+            width: 20px;
+            height: 20px;
+            border-radius: 25px;
+        }
+    }
+
+    .grass {
+        background-color: $grassColor;
+    }
+
+    .poison {
+        background-color: $poisonColor;
+    }
+
+    .ground {
+        background-color: $groundColor;
+    }
+
+    .rock {
+        background-color: $rockColor;
+    }
+
+    .water {
+        background-color: $waterColor;
+    }
+
+    .normal {
+        background-color: $normalColor
+    }
+
+    .electric {
+        background-color: $electricColor;
+    }
+
+    .fire {
+        background-color: $fireColor;
+    }
+
+    .ice {
+        background-color: $iceColor;
+    }
+
+    .dragon {
+        background-color: $dragonColor;
+    }
+
+    .bug {
+        background-color: $bugColor;
+    }
+
+    .flying {
+        background-color: $flyingColor;
+    }
+
+    .dark {
+        background-color: $darkColor;
+    }
+
+    .fairy {
+        background-color: $fairyColor;
+    }
+
+    .psychic {
+        background-color: $psychicColor;
+    }
+
+    .fighting {
+        background-color: $fightingColor;
+    }
+
+    .steel {
+        background-color: $steelColor;
+    }
+
+    .ghost {
+        background-color: $ghostColor;
+    }
+
+    .shadow {
+        background-color: $shadowColor;
+    }
+}

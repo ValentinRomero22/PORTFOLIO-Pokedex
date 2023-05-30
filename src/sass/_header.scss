@@ -1,0 +1,48 @@
+header {
+    height: 100px;
+    width: 100%;
+    padding: 10px 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 200px;
+    }
+
+    form {
+        display: flex;
+
+        .searchBox {
+            display: flex;
+            width: 350px;
+            padding: 10px 20px;
+            border: 1px solid $fourthColor;
+            border-radius: 25px;
+
+            svg {
+                width: 25px;
+                color: $fourthColor;
+            }
+
+            input {
+                margin-left: 10px;
+                width: 350px;
+                border: none;
+                font-size: .9rem;
+                outline: none;
+            }
+        }
+
+        button {
+            margin-left: 15px;
+            padding: 0 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: .9rem;
+            color: $secondColor;
+            background-color: $mainColor;
+            cursor: pointer;
+        }
+    }
+}
