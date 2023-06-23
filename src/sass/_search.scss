@@ -1,0 +1,13 @@
+.labelSearchContainer {
+    margin: 10px 0 20px;
+    transition: .3 ease all;
+
+    p {
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        body.darkMode & {
+            color: $secondColor;
+        }
+    }
+}

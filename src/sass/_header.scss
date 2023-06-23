@@ -10,39 +10,117 @@ header {
         width: 200px;
     }
 
-    form {
+    .headerContainer {
         display: flex;
+        align-items: center;
 
-        .searchBox {
+        form {
             display: flex;
-            width: 350px;
-            padding: 10px 20px;
-            border: 1px solid $fourthColor;
-            border-radius: 25px;
 
-            svg {
-                width: 25px;
-                color: $fourthColor;
+            .searchBox {
+                display: flex;
+                width: 350px;
+                padding: 10px 20px;
+                border: 1px solid $fourthColor;
+                border-radius: 25px;
+
+                svg {
+                    width: 25px;
+                    color: $fourthColor;
+                }
+
+                input {
+                    margin-left: 10px;
+                    width: 350px;
+                    border: none;
+                    font-size: .9rem;
+                    outline: none;
+                    background-color: transparent;
+
+                    body.darkMode & {
+                        color: $fourthColor;
+                    }
+                }
             }
 
-            input {
-                margin-left: 10px;
-                width: 350px;
+            .searchHeader {
+                margin: 0 30px 0 15px;
+                padding: 0 25px;
+                position: relative;
                 border: none;
+                border-radius: 25px;
                 font-size: .9rem;
-                outline: none;
+                color: $secondColor;
+                background: linear-gradient(90deg, $firstGradient 25%, $secondGradient 50%, $mainColor 80%);
+                z-index: 1;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    color: $thirdColor;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    bottom: 0;
+                    left: -100%;
+                    background-color: $fivethColor;
+                    border: none;
+                    border-radius: 25px;
+                    transition: all 0.3s;
+                    z-index: -1;
+                }
+
+                &:hover::after {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
             }
         }
 
-        button {
-            margin-left: 15px;
-            padding: 0 25px;
+        .switchHeader {
+            width: 80px;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             border: none;
-            border-radius: 25px;
-            font-size: .9rem;
-            color: $secondColor;
-            background-color: $mainColor;
+            border-radius: 20px;
+            background-color: $thirdColor;
+            position: relative;
+            border: 1px solid $fourthColor;
             cursor: pointer;
+
+            &::after {
+                content: '';
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: unset;
+                left: 0;
+                background: linear-gradient(90deg, $thirdGradient 20%, $fourthGradient 70%);
+                border-radius: 20px;
+                box-shadow: 0px 0px 10px 1px $thirdColor;
+            }
+
+            &.active {
+                background-color: transparent;
+
+                &::after {
+                    right: 0;
+                    left: unset;
+                }
+            }
+
+            svg {
+                margin-top: 5px;
+                height: 20px;
+            }
         }
     }
 }

@@ -1,6 +1,13 @@
 const Loader = () => {
     return (
-        <span>Cargando...</span>
+        <>
+            <div className='pokemonLouder'>
+                <div className="pokemonLouderContent">
+                    <span className="pokemonLouderCircle"></span>
+                    <span className="pokemonLouderDivider"></span>
+                </div>
+            </div>
+        </>
     )
 }
 

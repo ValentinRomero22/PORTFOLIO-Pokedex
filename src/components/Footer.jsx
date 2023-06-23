@@ -1,6 +1,11 @@
+import logo from "../assets/logo.png"
+
 const Footer = () => {
     return (
-        <span>Footer</span>
+        <footer>
+            <img src={logo} alt="Logo" />
+            <p>Desarrollado por Valentín Romero</p>
+        </footer>
     )
 }
 

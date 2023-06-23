@@ -1,0 +1,81 @@
+.detailContainer {
+    padding: 10px 15%;
+    transition: .3 ease all;
+
+    body.darkMode & {
+        color: $secondColor;
+    }
+
+    .pokemonDetailMainContainer {
+        font-size: 1.1rem;
+
+        h2 {
+            margin: 20px 0 10px;
+            display: block;
+            font-size: 2rem;
+        }
+
+        .pokemonTypeMainContainer {
+            width: max-content;
+            display: flex;
+            justify-content: flex-start;
+
+            .pokemonTypeContainer {
+                margin: 0 20px 0 0;
+                align-items: center;
+                justify-content: flex-start;
+
+                p {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .pokemonDetailContainer {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            .pokemonDetailImageAndTypeContainer {
+                width: 40%;
+
+                img {
+                    filter: drop-shadow(0 0 5px $thirdColor);
+                }
+            }
+
+            .pokemonDetailStatsContainer {
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .pokemonStats {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .pokemonStatNameContainer {
+                        width: 25%;
+                    }
+
+                    .pokemonStatContentContainer {
+                        width: 65%;
+                        font-weight: bold;
+
+                        .pokemonStateContent {
+                            max-width: 100%;
+                            height: 100%;
+                            border-radius: 25px;
+                            background-color: $mainColor;
+                        }
+                    }
+
+                    .pokemonStatValueContainer {
+                        width: 5%;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

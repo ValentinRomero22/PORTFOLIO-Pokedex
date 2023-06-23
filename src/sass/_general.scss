@@ -4,3 +4,110 @@
     box-sizing: border-box;
     font-family: $fuente, sans-serif;
 }
+
+body {
+    transition: .3s ease all;
+
+    &.darkMode {
+        background-color: $darkModeBackground;
+    }
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pokemonTypeContainer {
+    margin: 0 20%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .pokemonType {
+        width: 20px;
+        height: 20px;
+        border-radius: 25px;
+        transition: .3s ease all;
+
+        body.darkMode & {
+            border: 1px solid $fourthColor;
+        }
+    }
+}
+
+.grass {
+    background-color: $grassColor;
+}
+
+.poison {
+    background-color: $poisonColor;
+}
+
+.ground {
+    background-color: $groundColor;
+}
+
+.rock {
+    background-color: $rockColor;
+}
+
+.water {
+    background-color: $waterColor;
+}
+
+.normal {
+    background-color: $normalColor
+}
+
+.electric {
+    background-color: $electricColor;
+}
+
+.fire {
+    background-color: $fireColor;
+}
+
+.ice {
+    background-color: $iceColor;
+}
+
+.dragon {
+    background-color: $dragonColor;
+}
+
+.bug {
+    background-color: $bugColor;
+}
+
+.flying {
+    background-color: $flyingColor;
+}
+
+.dark {
+    background-color: $darkColor;
+}
+
+.fairy {
+    background-color: $fairyColor;
+}
+
+.psychic {
+    background-color: $psychicColor;
+}
+
+.fighting {
+    background-color: $fightingColor;
+}
+
+.steel {
+    background-color: $steelColor;
+}
+
+.ghost {
+    background-color: $ghostColor;
+}
+
+.shadow {
+    background-color: $shadowColor;
+}

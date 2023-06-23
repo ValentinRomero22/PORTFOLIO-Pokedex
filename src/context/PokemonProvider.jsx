@@ -1,77 +1,85 @@
 import { useEffect, useState } from "react"
 import { PokemonContext } from "./PokemonContext"
 import { useForm } from "../hooks/useForm"
+import { URL } from "../helpers/apiConection"
 
-export const PokemonProvider = ({children}) => {
+export const PokemonProvider = ({ children }) => {
     const [pokemons, setPokemons] = useState([])
     const [allPokemons, setAllPokemons] = useState([])
     const [filteredPokemons, setFilteredPokemons] = useState([])
+    const [error, setError] = useState(false)
 
     const [offset, setOffset] = useState(0)
 
-    // estados simples para la aplicación
     const [loading, setLoading] = useState(true)
     const [active, setActive] = useState(false)
+    const [darkMode, setDarkMode] = useState(false)
 
     // useForm para extraer
     const { valueSearch, onInputChange, onResetForm } = useForm({
         valueSearch: ''
     })
-    
-    // solo llama a 25 pokemones
-    const getPokemons = async(limit = 25) => {
-        const url = 'https://pokeapi.co/api/v2/'
-
-        const res = await fetch(`${url}pokemon?limit=${limit}&offset=${offset}`)
-        const data = await res.json()
-
-        const promises = data.results.map(async pokemon =>{
-            const pokemonRes = await fetch(pokemon.url)
-            const pokemonData = await pokemonRes.json()
-            return pokemonData
-        })
-
-        const results = await Promise.all(promises)
-        
-        setPokemons([...pokemons, ...results])
-        setLoading(false)
-    }
-
-    useEffect(() => {
-        getPokemons()      
-    }, [offset])
-
-    // llamar a todos los pokemones
-    const getAllPokemons = async() => {
-        const url = 'https://pokeapi.co/api/v2/'
-
-        const res = await fetch(`${url}pokemon?limit=1500&offset=0`)
-        const data = await res.json()
-
-        const promises = data.results.map(async pokemon => {
-            const pokemonRes = await fetch(pokemon.url)
-            const pokemonData = await pokemonRes.json()
-            return pokemonData
-        })
-
-        const results = await Promise.all(promises)
-              
-        setAllPokemons(results)
-        setLoading(false)
-    }
 
     useEffect(() => {
         getAllPokemons()
     }, [])
 
+    useEffect(() => {
+        getPokemons()
+    }, [offset])
+
+    // solo llama a 25 pokemones
+    const getPokemons = async (limit = 25) => {
+        try {
+            const res = await fetch(`${URL}pokemon?limit=${limit}&offset=${offset}`)
+            const data = await res.json()
+
+            const promises = data.results.map(async pokemon => {
+                const pokemonRes = await fetch(pokemon.url)
+                const pokemonData = await pokemonRes.json()
+                return pokemonData
+            })
+
+            const results = await Promise.all(promises)
+
+            setPokemons([...pokemons, ...results])
+            setLoading(false)
+        } catch (error) {
+            setError(true)
+        }
+    }
+
+    // llamar a todos los pokemones
+    const getAllPokemons = async () => {
+        try {
+            const res = await fetch(`${URL}pokemon?limit=600&offset=0`)
+            const data = await res.json()
+
+            const promises = data.results.map(async pokemon => {
+                const pokemonRes = await fetch(pokemon.url)
+                const pokemonData = await pokemonRes.json()
+                return pokemonData
+            })
+
+            const results = await Promise.all(promises)
+
+            setAllPokemons(results)
+            setLoading(false)
+        } catch {
+            setError(true)
+        }
+    }
+
     // llamar a un pokemon por id
-    const getPokemonById = async() => {
-        const url = 'https://pokeapi.co/api/v2/'
+    const getPokemonById = async (id) => {
+        try {
+            const res = await fetch(`${URL}pokemon/${id}`)
+            const data = await res.json()
 
-        const res = await fetch(`${url}pokemon/${id}`)
-        const data = await res.json()
-
-        console.log(data) // codear esta parte...
+            return data
+        } catch {
+            setError(true)
+        }
     }
 
     const onClickLoadMore = () => {
@@ -100,19 +108,32 @@ export const PokemonProvider = ({children}) => {
         flying: false,
     })
 
-    const handleCheckbox = (e) => {  
-        setType({...type, [e.target.name] : e.target.checked})
+    const handleCheckbox = (e) => {
+        setType({ ...type, [e.target.name]: e.target.checked })
 
-        if(e.target.checked) {            
-            const filteredData = allPokemons.filter(pokemon => 
-                pokemon.types.map(type => type.type.name).includes(e.target.name)
-            )            
+        if (e.target.checked) {
 
-            setFilteredPokemons([...filteredPokemons, ...filteredData])
+            if (filteredPokemons.length == 0) {
+                const filteredData = allPokemons.filter(pokemon =>
+                    pokemon.types.map(type => type.type.name).includes(e.target.name)
+                )
+
+                setFilteredPokemons([...filteredPokemons, ...filteredData])
+            } else {
+                const filteredAuxData = filteredPokemons.filter(pokemon =>
+                    !pokemon.types.map(type => type.type.name).includes(e.target.name)
+                )
+
+                const filteredData = allPokemons.filter(pokemon =>
+                    pokemon.types.map(type => type.type.name).includes(e.target.name)
+                )
+
+                setFilteredPokemons([...filteredAuxData, ...filteredData])
+            }
         } else {
-            const filteredData = filteredPokemons.filter(pokemon => 
+            const filteredData = filteredPokemons.filter(pokemon =>
                 !pokemon.types.map(type => type.type.name).includes(e.target.name)
-        )
+            )
 
             setFilteredPokemons([...filteredData])
         }
@@ -120,7 +141,7 @@ export const PokemonProvider = ({children}) => {
 
     return (
         <PokemonContext.Provider
-            value = {{ 
+            value={{
                 valueSearch,
                 onInputChange,
                 onResetForm,
@@ -134,8 +155,11 @@ export const PokemonProvider = ({children}) => {
                 setLoading,
                 handleCheckbox,
                 filteredPokemons,
+                error,
+                darkMode,
+                setDarkMode,
             }}>
-                {children}
+            {children}
 
         </PokemonContext.Provider>
     )

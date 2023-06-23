@@ -3,21 +3,34 @@
     position: relative;
 
     .botonFilterContainer {
-        margin: 10px 0;
+        margin: 10px 0 15px;
         display: flex;
-        /* justify-content: start; */
         align-items: center;
 
         svg {
             width: 30px;
             margin-right: 10px;
             cursor: pointer;
+            transition: .3s ease all;
+
+            body.darkMode & {
+                color: $secondColor;
+            }
+        }
+
+        span {
+            transition: .3s ease all;
+
+            body.darkMode & {
+                color: $secondColor;
+            }
         }
     }
 
     .loadMoreContainer {
-        margin: 50px 0;
-        overflow: hidden;
+        margin: 80px 0;
+        display: flex;
+        justify-content: center;
 
         button {
             padding: 15px 30px;
@@ -25,8 +38,36 @@
             border-radius: 25px;
             font-size: .9rem;
             color: $secondColor;
-            background-color: $mainColor;
+            background: linear-gradient(90deg, $firstGradient 25%, $secondGradient 50%, $mainColor 80%);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
             cursor: pointer;
+
+            &:hover {
+                color: $thirdColor;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                right: 100%;
+                left: -100%;
+                background-color: $fivethColor;
+                border: none;
+                border-radius: 25px;
+                transition: all 0.3s;
+            }
+
+            &:hover::after {
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
         }
     }
 }

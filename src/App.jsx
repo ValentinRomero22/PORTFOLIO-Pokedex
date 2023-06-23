@@ -4,9 +4,11 @@ import { PokemonProvider } from "./context/PokemonProvider"
 function App() {
 
 	return ( 
-		<PokemonProvider>
-			<AppRouter />
-		</PokemonProvider>
+		<div id="app">
+			<PokemonProvider>
+				<AppRouter />
+			</PokemonProvider>
+		</div>
 	) 
 }
 

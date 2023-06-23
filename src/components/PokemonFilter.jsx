@@ -12,7 +12,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="steel"
-                    id="steel">
+                    id="steel"
+                    className="filterCheckbox">
                 </input>
                 <span>Acero</span>
             </div>
@@ -21,7 +22,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="water"
-                    id="water">
+                    id="water"
+                    className="filterCheckbox">
                 </input>
                 <span>Agua</span>
             </div>
@@ -30,7 +32,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="bug"
-                    id="bug">
+                    id="bug"
+                    className="filterCheckbox">
                 </input>
                 <span>Bicho</span>
             </div>
@@ -39,7 +42,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="unknow"
-                    id="unknow">
+                    id="unknow"
+                    className="filterCheckbox">
                 </input>
                 <span>Desconocido</span>
             </div>
@@ -48,7 +52,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="dragon"
-                    id="dragon">
+                    id="dragon"
+                    className="filterCheckbox">
                 </input>
                 <span>Dragon</span>
             </div>
@@ -57,7 +62,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="electric"
-                    id="electric">
+                    id="electric"
+                    className="filterCheckbox">
                 </input>
                 <span>Eléctrico</span>
             </div>
@@ -66,7 +72,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="ghost"
-                    id="ghost">
+                    id="ghost"
+                    className="filterCheckbox">
                 </input>
                 <span>Fantasma</span>
             </div>
@@ -75,7 +82,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="fire"
-                    id="fire">
+                    id="fire"
+                    className="filterCheckbox">
                 </input>
                 <span>Fuego</span>
             </div>
@@ -84,7 +92,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="fairy"
-                    id="fairy">
+                    id="fairy"
+                    className="filterCheckbox">
                 </input>
                 <span>Hada</span>
             </div>
@@ -93,7 +102,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="ice"
-                    id="ice">
+                    id="ice"
+                    className="filterCheckbox">
                 </input>
                 <span>Hielo</span>
             </div>
@@ -102,7 +112,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="fighting"
-                    id="fighting">
+                    id="fighting"
+                    className="filterCheckbox">
                 </input>
                 <span>Lucha</span>
             </div>
@@ -111,7 +122,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="normal"
-                    id="normal">
+                    id="normal"
+                    className="filterCheckbox">
                 </input>
                 <span>Normal</span>
             </div>
@@ -120,7 +132,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="dark"
-                    id="dark">
+                    id="dark"
+                    className="filterCheckbox">
                 </input>
                 <span>Oscuridad</span>
             </div>
@@ -129,7 +142,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="grass"
-                    id="grass">
+                    id="grass"
+                    className="filterCheckbox">
                 </input>
                 <span>Pasto</span>
             </div>
@@ -138,7 +152,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="psychic"
-                    id="psychic">
+                    id="psychic"
+                    className="filterCheckbox">
                 </input>
                 <span>Psíquico</span>
             </div>
@@ -147,7 +162,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="rock"
-                    id="rock">
+                    id="rock"
+                    className="filterCheckbox">
                 </input>
                 <span>Roca</span>
             </div>
@@ -156,7 +172,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="shadow"
-                    id="shadow">
+                    id="shadow"
+                    className="filterCheckbox">
                 </input>
                 <span>Sombra</span>
             </div>
@@ -165,7 +182,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="ground"
-                    id="ground">
+                    id="ground"
+                    className="filterCheckbox">
                 </input>
                 <span>Tierra</span>
             </div>
@@ -174,7 +192,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="poison"
-                    id="poison">
+                    id="poison"
+                    className="filterCheckbox">
                 </input>
                 <span>Veneno</span>
             </div>
@@ -183,7 +202,8 @@ const PokemonFilter = () => {
                     type="checkbox"
                     onChange={handleCheckbox}
                     name="flying"
-                    id="flying">
+                    id="flying"
+                    className="filterCheckbox">
                 </input>
                 <span>Volador</span>
             </div>

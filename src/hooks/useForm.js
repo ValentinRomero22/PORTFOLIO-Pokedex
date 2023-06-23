@@ -1,18 +1,18 @@
 import { useState } from "react"
 
 export const useForm = (initialForm = {}) => {
-    const [formState, setformState] = useState(initialForm)
+    const [formState, setFormState] = useState(initialForm)
     
     const onInputChange = ({target}) => { // desestructura el target del evento --> e.target
         const { name, value } = target
 
-        setformState({
+        setFormState({
             ...formState, [name]: value
         })
     }
 
     const onResetForm = () => { // solamente reinicia el formulario
-        setformState(initialForm)
+        setFormState(initialForm)
     }
 
     return {
