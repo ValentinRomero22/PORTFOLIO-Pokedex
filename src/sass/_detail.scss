@@ -41,6 +41,10 @@
 
                 img {
                     filter: drop-shadow(0 0 5px $thirdColor);
+
+                    body.darkMode & {
+                        filter: drop-shadow(0 0 10px $darkModeShadow);
+                    }
                 }
             }
 
@@ -49,6 +53,24 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+
+                .pokemonSimpleStats {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .pokemonStatNameContainer {
+                        width: 25%;
+                    }
+
+                    .pokemonStatContentContainer {
+                        width: 65%;
+                        font-weight: bold;
+                    }
+
+                    .pokemonStatValueContainer {
+                        width: 5%;
+                    }
+                }
 
                 .pokemonStats {
                     display: flex;

@@ -9,7 +9,7 @@ export const Search = () => {
 
     const { allPokemons } = useContext(PokemonContext)
 
-    const filteredPokemons = allPokemons.filter( pokemon => 
+    const filteredPokemons = allPokemons.filter(pokemon =>
         pokemon.name.includes(location.state.toLowerCase())
     )
 
@@ -18,23 +18,27 @@ export const Search = () => {
             <div className="homeContainer">
                 {
                     filteredPokemons.length > 0 ?
-                    <>
-                        <div className="labelSearchContainer">
-                            <p>Se encontraron {filteredPokemons.length} pokemones</p>
-                        </div>
-                        <div className="cardListContainer">
-                            {
-                                filteredPokemons.map(pokemon => (
-                                    <PokemonCard key={pokemon.id} pokemon={pokemon}/>
-                                ))
-                            }
-                        </div>
-                    </> :
-                    <>
-                        <div className="labelSearchContainer">
-                            <p>No se encontraron pokemones con la búsqueda "{location.state}"</p>
-                        </div>
-                    </>
+                        <>
+                            <div className="labelSearchContainer">
+                                {
+                                    filteredPokemons.length == 1 ?
+                                        <p>Se encontró {filteredPokemons.length} pokemon</p> :
+                                        <p>Se encontraron {filteredPokemons.length} pokemones</p>
+                                }
+                            </div>
+                            <div className="cardListContainer">
+                                {
+                                    filteredPokemons.map(pokemon => (
+                                        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+                                    ))
+                                }
+                            </div>
+                        </> :
+                        <>
+                            <div className="labelSearchContainer">
+                                <p>No se encontraron pokemones con la búsqueda "{location.state}"</p>
+                            </div>
+                        </>
                 }
             </div>
             <Footer />

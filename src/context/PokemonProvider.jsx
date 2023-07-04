@@ -13,6 +13,7 @@ export const PokemonProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true)
     const [active, setActive] = useState(false)
+    const [search, setSearch] = useState(false)
     const [darkMode, setDarkMode] = useState(false)
 
     // useForm para extraer
@@ -158,6 +159,8 @@ export const PokemonProvider = ({ children }) => {
                 error,
                 darkMode,
                 setDarkMode,
+                search,
+                setSearch
             }}>
             {children}
 

@@ -12,7 +12,7 @@ const PokemonDetail = ({ pokemon }) => {
                         <div key={t.type.name} className="pokemonTypeContainer">
                             <p>{capitalFirstLetter(t.type.name)}</p>
                             <div className={`pokemonType ${t.type.name}`}></div>
-                        </div>              
+                        </div>
                     ))
                 }
             </div>
@@ -25,7 +25,7 @@ const PokemonDetail = ({ pokemon }) => {
                     }
                 </div>
                 <div className="pokemonDetailStatsContainer">
-                    <div className="pokemonStats">
+                    <div className="pokemonSimpleStats">
                         <div className="pokemonStatNameContainer">
                             <p>Altura</p>
                         </div>
@@ -34,7 +34,7 @@ const PokemonDetail = ({ pokemon }) => {
                         </div>
                         <div className="pokemonStatValueContainer"></div>
                     </div>
-                    <div className="pokemonStats">
+                    <div className="pokemonSimpleStats">
                         <div className="pokemonStatNameContainer">
                             <p>Peso</p>
                         </div>
@@ -48,7 +48,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Puntos de sangre</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[0].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[0].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[0].base_stat}</p>
@@ -59,7 +59,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Ataque</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[1].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[1].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[1].base_stat}</p>
@@ -70,7 +70,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Defensa</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[2].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[2].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[2].base_stat}</p>
@@ -81,7 +81,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Ataque especial</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[3].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[3].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[3].base_stat}</p>
@@ -92,7 +92,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Defensa especial</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[4].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[4].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[4].base_stat}</p>
@@ -103,7 +103,7 @@ const PokemonDetail = ({ pokemon }) => {
                             <p>Velocidad</p>
                         </div>
                         <div className="pokemonStatContentContainer">
-                            <div className="pokemonStateContent" style={{width: pokemon.stats[5].base_stat + '%'}}></div>
+                            <div className="pokemonStateContent" style={{ width: pokemon.stats[5].base_stat + '%' }}></div>
                         </div>
                         <div className="pokemonStatValueContainer">
                             <p>{pokemon.stats[5].base_stat}</p>
