@@ -43,7 +43,13 @@ La aplicación se ejecutará en el puerto 3000 del servidor local: http://localh
 * Dispone de dos temas, oscuro y claro
 
 
+## Recursos externos
+
+ - La aplicación utiliza la api de [Pokeapi](https://pokeapi.co/)
+
+
 ## Demo
 
 * Muestra de funcionalidad de la aplicación
+
 ![](/userflow/userFlow.gif)
