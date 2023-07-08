@@ -3,6 +3,8 @@
 Proyecto de datos de Pokemones realizado en React, utilizando la api PokeApi
 
 
+![](/userflow/userFlow.gif)
+
 
 ## Instalación
 
@@ -48,8 +50,7 @@ La aplicación se ejecutará en el puerto 3000 del servidor local: http://localh
  - La aplicación utiliza la api de [Pokeapi](https://pokeapi.co/)
 
 
-## Demo
 
-* Muestra de funcionalidad de la aplicación
+## Deploy 
 
-![](/userflow/userFlow.gif)
+* Para acceder a la aplicación haga click [aquí](https://pokedexvr22.netlify.app)
