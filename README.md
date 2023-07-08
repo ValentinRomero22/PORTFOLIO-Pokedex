@@ -29,11 +29,10 @@ Luego correr el proyecto
 La aplicación se ejecutará en el puerto 3000 del servidor local: http://localhost:3000
 
 
-## Lenguajes y frameworks utilizados
+## Tecnologías utilizadas
 
-|     React     |     Sass      |
-| ------------- | ------------- |
-| ![](/src/assets/reactReadme.png) | ![](/scr/assets/sassReadme.png)  |
+* React
+* Sass
 
 
 ## Funcionalidad
