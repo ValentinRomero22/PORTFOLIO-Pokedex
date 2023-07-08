@@ -31,9 +31,9 @@ La aplicación se ejecutará en el puerto 3000 del servidor local: http://localh
 
 ## Lenguajes y frameworks utilizados
 
-* React
-* Sass
-
+|     React     |     Sass      |
+| ------------- | ------------- |
+| ![](/src/assets/reactReadme.png) | ![](/scr/assets/sassReadme.png)  |
 
 
 ## Funcionalidad
