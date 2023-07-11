@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import { PokemonContext } from "./PokemonContext"
+import { NotificationContext } from "./PokemonContext"
 import { useForm } from "../hooks/useForm"
 import { URL } from "../helpers/apiConection"
+import useNotification from "../hooks/useNotification"
 
 export const PokemonProvider = ({ children }) => {
     const [pokemons, setPokemons] = useState([])
@@ -15,6 +17,9 @@ export const PokemonProvider = ({ children }) => {
     const [active, setActive] = useState(false)
     const [search, setSearch] = useState(false)
     const [darkMode, setDarkMode] = useState(false)
+
+    /* const { setMessages } = useContext(NotificationContext) */
+    const addNotification = useNotification()
 
     // useForm para extraer
     const { valueSearch, onInputChange, onResetForm } = useForm({
@@ -113,14 +118,18 @@ export const PokemonProvider = ({ children }) => {
         setType({ ...type, [e.target.name]: e.target.checked })
 
         if (e.target.checked) {
-
+            
             if (filteredPokemons.length == 0) {
+                addNotification(`Se muestran pokemones de tipo ${e.target.name}`)
+
                 const filteredData = allPokemons.filter(pokemon =>
                     pokemon.types.map(type => type.type.name).includes(e.target.name)
                 )
 
                 setFilteredPokemons([...filteredPokemons, ...filteredData])
             } else {
+                addNotification(`Se agregó el tipo ${e.target.name}`)
+
                 const filteredAuxData = filteredPokemons.filter(pokemon =>
                     !pokemon.types.map(type => type.type.name).includes(e.target.name)
                 )
@@ -132,6 +141,13 @@ export const PokemonProvider = ({ children }) => {
                 setFilteredPokemons([...filteredAuxData, ...filteredData])
             }
         } else {
+            // para cuando ya no hay filtros...
+            /* if (filteredPokemons.length == 0) {
+                addNotification(`Se muestran resultados sin filtrar`)
+            } */
+
+            addNotification(`Se quitó el tipo ${e.target.name}`)
+
             const filteredData = filteredPokemons.filter(pokemon =>
                 !pokemon.types.map(type => type.type.name).includes(e.target.name)
             )
@@ -160,7 +176,8 @@ export const PokemonProvider = ({ children }) => {
                 darkMode,
                 setDarkMode,
                 search,
-                setSearch
+                setSearch,
+                type
             }}>
             {children}
 

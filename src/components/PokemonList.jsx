@@ -8,6 +8,10 @@ import errorImage from "../assets/error.png"
 const PokemonList = () => {
     const { loading, pokemons, filteredPokemons, onClickLoadMore, setActive, active, error } = useContext(PokemonContext)
 
+    const handlerScroll = () => {
+        window.scrollTo({top: 0, behavior:'smooth'})
+    } 
+
     if (error) {
         return (
             <div className="errorContainer">
@@ -68,6 +72,11 @@ const PokemonList = () => {
                             </div>
                         </>
             }
+            <button
+                onClick={handlerScroll}
+                className="upButton">
+                ↑
+            </button>
         </>
     )
 }

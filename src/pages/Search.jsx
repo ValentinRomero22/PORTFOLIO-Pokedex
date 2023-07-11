@@ -13,6 +13,10 @@ export const Search = () => {
         pokemon.name.includes(location.state.toLowerCase())
     )
 
+    const handlerScroll = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
     return (
         <>
             <div className="homeContainer">
@@ -33,6 +37,11 @@ export const Search = () => {
                                     ))
                                 }
                             </div>
+                            <button
+                                onClick={handlerScroll}
+                                className="upButton">
+                                ↑
+                            </button>
                         </> :
                         <>
                             <div className="labelSearchContainer">

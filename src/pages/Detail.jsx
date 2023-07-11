@@ -6,13 +6,13 @@ import PokemonDetail from '../components/PokemonDetail'
 import Footer from "../components/Footer"
 
 export const Detail = () => {
-    const {id} = useParams()
+    const { id } = useParams()
     const [pokemon, setPokemon] = useState({})
     const [loading, setLoading] = useState(true)
-    
+
     const { getPokemonById } = useContext(PokemonContext)
 
-    const getPokemon = async(id) => {
+    const getPokemon = async (id) => {
         const data = await getPokemonById(id)
         setPokemon(data)
         setLoading(false)

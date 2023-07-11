@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { capitalFirstLetter } from '../helpers/capitalFirstLetter'
 import pokebola from '../assets/pokebola.png'
 
