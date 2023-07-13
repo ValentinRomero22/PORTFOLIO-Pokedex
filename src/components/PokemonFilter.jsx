@@ -174,17 +174,6 @@ const PokemonFilter = () => {
             </div>
             <div className="filter">
                 <input
-                    checked={type.shadow ? true : false}
-                    type="checkbox"
-                    onChange={handleCheckbox}
-                    name="shadow"
-                    id="shadow"
-                    className="filterCheckbox">
-                </input>
-                <span>Sombra</span>
-            </div>
-            <div className="filter">
-                <input
                     checked={type.ground ? true : false}
                     type="checkbox"
                     onChange={handleCheckbox}

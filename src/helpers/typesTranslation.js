@@ -28,8 +28,8 @@ export const translation = (word) => {
             return 'Psíquico'
         case 'rock':
             return 'Roca'
-        case 'shadow':
-            return 'Sombra'
+        case 'normal':
+            return 'Normal'
         case 'ground':
             return 'Tierra'
         case 'poison':
