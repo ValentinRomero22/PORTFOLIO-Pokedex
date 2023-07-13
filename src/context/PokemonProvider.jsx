@@ -95,7 +95,6 @@ export const PokemonProvider = ({ children }) => {
         steel: false,
         water: false,
         bug: false,
-        unknow: false,
         dragon: false,
         eletric: false,
         ghost: false,

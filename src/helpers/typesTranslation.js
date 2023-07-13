@@ -6,8 +6,6 @@ export const translation = (word) => {
             return 'Agua'
         case 'bug':
             return 'Bicho'
-        case 'unknow':
-            return 'Desconocido'
         case 'dragon':
             return 'Dragon'
         case 'electric':
