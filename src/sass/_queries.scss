@@ -152,6 +152,13 @@
 }
 
 @media screen and (max-width: 1150px) {
+    #app {
+
+        .upButton {
+            left: 93%;
+        }
+    }
+
     .cardListContainer {
         grid-template-columns: repeat(3, 1fr);
 
@@ -362,6 +369,13 @@
 }
 
 @media screen and (max-width: 768px) {
+    #app {
+
+        .notificationContainer {
+            top: 30px;
+        }
+    }
+
     header {
         height: 110px;
 
@@ -392,6 +406,13 @@
 }
 
 @media screen and (max-width: 600px) {
+    #app {
+
+        .upButton {
+            left: 90%;
+        }
+    }
+
     header {
 
         .headerContainer {
@@ -453,6 +474,16 @@
 }
 
 @media screen and (max-width: 500px) {
+    #app {
+
+        .notificationContainer {
+
+            .notification {
+                padding: 10px 15px;
+            }
+        }
+    }
+
     header {
 
         img {
