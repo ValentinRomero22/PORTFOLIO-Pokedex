@@ -3,7 +3,7 @@
 Proyecto de datos de Pokemones realizado en React, utilizando la api PokeApi
 
 
-![](/userflow/userFlow.gif)
+![](/userflow/user_flow.gif)
 
 
 ## Instalación
